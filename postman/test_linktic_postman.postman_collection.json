@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "63a51f37-73fd-4397-9ca5-a7574991bc7a",
+		"name": "test_linktic_postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product_controller",
+			"item": [
+				{
+					"name": "list_product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/product",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"consola\",\n    \"description\": \"ps4\",\n    \"price\": 250000,\n    \"category\": \"gamer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/product",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/product/61bd0d00655207296fb30eff ",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"product",
+								"61bd0d00655207296fb30eff "
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "edit_Product_controller",
+			"item": [
+				{
+					"name": "edit_product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"lg Smart tv\",\n    \"description\": \"50 pull\",\n    \"price\": 9000000,\n    \"category\": \"Tv\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/product/edit/61be384c6ee53d16f234cab2",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"product",
+								"edit",
+								"61be384c6ee53d16f234cab2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_edit_product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{test}}/product/edit/61be384c6ee53d16f234cab2",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"product",
+								"edit",
+								"61be384c6ee53d16f234cab2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "filter_product",
+			"item": [
+				{
+					"name": "filter_by_category_or_title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{test}}/product/filter?filterProduct=gamer",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"product",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "filterProduct",
+									"value": "gamer"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
